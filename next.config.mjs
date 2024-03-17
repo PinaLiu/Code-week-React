@@ -7,8 +7,8 @@ const nextConfig = {
     //remotePatterns: [{ hostname: "th.bing.com" }], deprecato
   },
   //per  deploy su github pages
-  basePath: isProd ? "/Code-week-React" : "",
-  assetPrefix: isProd ? "/Code-week-React" : "",
+  // basePath: isProd ? "/Code-week-React" : "",
+  // assetPrefix: isProd ? "/Code-week-React" : "",
 };
 
 export default nextConfig;
