@@ -21,7 +21,7 @@ jobs:
       - name: Use Node.js 20.x
         uses: actions/setup-node@v4
         with:
-          node-version: "20.x" # Assicurati di usare la versione di Node.js che hai localmente
+          node-version: "20" # Assicurati di usare la versione di Node.js che hai localmente
       - name: Clear npm cache
         run: npm cache clean --force
 
