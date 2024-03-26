@@ -4,13 +4,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
+const app = express();
+const PORT = process.env.PORT || 3002;
+
 // Parser per i dati della richiesta
 app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
-
-const app = express();
-const PORT = process.env.PORT || 3002;
 
 // Connessione a MongoDB
 mongoose
