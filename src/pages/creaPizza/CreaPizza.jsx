@@ -31,7 +31,19 @@ export default function CreaPizza() {
       }
     }
   };
+  //rimuovi basi
+  const rimuoviBase = (id) => {
+    setBase("");
+    setSelectedBase(null);
+  };
+  //rimuovi impasti
+  const rimuoviImpasto = (id) => {
+    setImpasto("");
 
+    setSelectedImpasto(null);
+  };
+
+  //rimuovi ingredienti
   const rimuoviIngrediente = (id) => {
     setIngredientiSelezionati(
       ingredientiSelezionati.filter((ingredienteId) => ingredienteId !== id)
@@ -46,6 +58,7 @@ export default function CreaPizza() {
         ingredienti.find((i) => i.id === id)
       ),
     };
+    // console.log("Ingredienti selezionati:", ingredientiSelezionati);
 
     setCarrello([...carrello, pizza]);
     setBase("");
@@ -80,16 +93,18 @@ export default function CreaPizza() {
         options={basi}
         selectedOption={selectedBase}
         handleClick={(id) => handleClick(id, "base")}
+        handleRemove={rimuoviBase}
       />
       <CardGenerator
         title="Impasto"
         options={impasti}
         selectedOption={selectedImpasto}
         handleClick={(id) => handleClick(id, "impasto")}
+        handleRemove={rimuoviImpasto}
       />
 
       <CardGenerator
-        title="Scegli gli ingredienti"
+        title="Scegli gli ingredienti (max 3)"
         options={ingredienti}
         selectedOption={ingredientiSelezionati}
         handleClick={(id) => handleClick(id, "ingredienti")}
@@ -105,7 +120,7 @@ export default function CreaPizza() {
           )}
           {ingredientiSelezionati.length > 0 && (
             <p>
-              Ingredienti:
+              Ingredienti:{" "}
               {ingredientiSelezionati
                 .map((id) => ingredienti.find((i) => i.id === id).nome)
                 .join(", ")}

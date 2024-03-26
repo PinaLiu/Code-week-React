@@ -34,11 +34,11 @@ const Carrello = () => {
   return (
     <Layout>
       <CardCarrello
-        key={orderKey} // Aggiungi questa prop
+        key={orderKey}
         title="Carrello"
         items={carrello}
         onOrder={effettuaOrdine}
-        onClear={handleClearCarrello} // Aggiungi questa prop
+        onClear={handleClearCarrello}
       />
     </Layout>
   );

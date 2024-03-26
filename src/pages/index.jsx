@@ -59,6 +59,7 @@ export default function Home() {
             <input type="button" class="ok" value="Crea la Pizza" />
           </Link>
         </div>
+        <br />
       </Layout>
     </>
   );

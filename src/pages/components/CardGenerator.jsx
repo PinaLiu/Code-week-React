@@ -1,11 +1,19 @@
 import React from "react";
+
 import styles from "../creaPizza/creaPizza.module.scss";
 
-const CardGenerator = ({ title, options, selectedOption, handleClick }) => {
-  const selectedOptionArray = Array.isArray(selectedOption)
-    ? selectedOption
-    : [];
-
+const CardGenerator = ({
+  title,
+  options,
+  selectedOption,
+  handleClick,
+  handleRemove,
+}) => {
+  // const selectedOptionArray = Array.isArray(selectedOption)
+  //   ? selectedOption
+  //   : [];
+  console.log("selectedOption:", selectedOption);
+  // console.log("selectedOptionArray:", selectedOptionArray);
   return (
     <div className={styles.container}>
       <div className={styles.options}>
@@ -21,17 +29,24 @@ const CardGenerator = ({ title, options, selectedOption, handleClick }) => {
                   </p>
                 )}
               </p>
+              {/* {selectedOption === option.id && (
+                <p>
+                  {" "}
+                  <FaCheckCircle style={{ fontSize: "30px" }} />
+                </p>
+              )}{" "} */}
+              <div>
+                <input
+                  className={styles.btn_option}
+                  type="button"
+                  value="+"
+                  onClick={() => handleClick(option.id)}
+                />
+                {/*  */}
 
-              {selectedOption === option.id && <p> ✓</p>}
-              <input
-                className={styles.btn_option}
-                type="button"
-                value="+"
-                onClick={() => handleClick(option.id)}
-              />
-              {/* {console.log("selectedOption:", selectedOption)} */}
-              {selectedOptionArray.includes(option.id) &&
-                title === "Scegli gli ingredienti" && (
+                {(selectedOption === option.id ||
+                  (Array.isArray(selectedOption) &&
+                    selectedOption.includes(option.id))) && (
                   <input
                     className={styles.btn_option}
                     type="button"
@@ -39,6 +54,7 @@ const CardGenerator = ({ title, options, selectedOption, handleClick }) => {
                     onClick={() => handleRemove(option.id)}
                   />
                 )}
+              </div>
             </div>
           ))}
       </div>

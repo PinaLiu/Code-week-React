@@ -7,13 +7,15 @@ const Header = () => {
   return (
     <header className={styles.header_main}>
       <div className={styles.header_logo}>
-        <Image
-          className={styles.logo}
-          src="https://th.bing.com/th/id/OIG1.on2KxDHdLoppaEFR383r?pid=ImgGn"
-          alt="Logo Pizzeria Nà Zà Pina"
-          width={100}
-          height={100}
-        />
+        <Link href="/">
+          <Image
+            className={styles.logo}
+            src="https://th.bing.com/th/id/OIG1.on2KxDHdLoppaEFR383r?pid=ImgGn"
+            alt="Logo Pizzeria Nà Zà Pina"
+            width={100}
+            height={100}
+          />
+        </Link>
       </div>
 
       <div className={styles.navigation}>
