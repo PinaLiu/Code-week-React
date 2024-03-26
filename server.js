@@ -1,7 +1,13 @@
-require("dotenv").config();
+//lo tolgo per vercel
+// require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+
+// Parser per i dati della richiesta
+app.use(express.json());
+app.use(cors());
+app.use(express.urlencoded({ extended: true }));
 
 const app = express();
 const PORT = process.env.PORT || 3002;
@@ -28,11 +34,6 @@ const orderSchema = new Schema({
   ingredienti: [String],
 });
 const Order = mongoose.model("Order", orderSchema);
-
-// Parser per i dati della richiesta
-app.use(express.json());
-app.use(cors());
-app.use(express.urlencoded({ extended: true }));
 
 // Rotte
 app.post("/api/order", (req, res) => {

@@ -22,7 +22,7 @@ const CardCarrello = ({ title, items, onOrder, onClear }) => {
     // Mostra un messaggio di errore se la richiesta fallisce
 
     axios
-      .post("http://localhost:3001/api/order", {
+      .post(process.env.REACT_APP_URL + "/api/order", {
         nome: nome,
         pizza: items[0].pizza,
         base: items[0].base ? items[0].base.nome : null,
@@ -38,8 +38,19 @@ const CardCarrello = ({ title, items, onOrder, onClear }) => {
         window.alert("Ordine inviato con successo!");
       })
       .catch((error) => {
-        console.error("Errore durante la richiesta Axios:", error);
-        console.error("Errore durante l'invio dell'ordine:", error);
+        if (error.response) {
+          // Il server ha risposto con uno stato di errore
+          console.error("Dettagli dell'errore:", error.response.data);
+          console.error("Stato dell'errore:", error.response.status);
+          console.error("Headers dell'errore:", error.response.headers);
+        } else if (error.request) {
+          // La richiesta è stata effettuata ma non c'è stata risposta
+          console.error("Richiesta:", error.request);
+        } else {
+          // Qualcosa è andato storto nella configurazione della richiesta
+          console.error("Errore:", error.message);
+        }
+        console.error("Configurazione completa dell'errore:", error.config);
         window.alert("Si è verificato un errore durante l'invio dell'ordine.");
       });
   };
