@@ -1,26 +1,33 @@
 import mongoose from "mongoose";
 
+// Definisci lo schema del modello per gli ordini
 const Schema = mongoose.Schema;
 const orderSchema = new Schema({
   nome: String,
-  pizza: String,
+  pizza: String, //riferito alle nostre pizze
+  //crea la tua pizza
   base: String,
   impasto: String,
   ingredienti: [String],
 });
-
 const Order = mongoose.model("Order", orderSchema);
 
-// Connessione a MongoDB
 export default async function handler(req, res) {
   if (req.method === "POST") {
     const { nome, pizza, base, impasto, ingredienti } = req.body;
 
     // Connessione a MongoDB
-    await mongoose.connect(process.env.DATABASE_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    if (mongoose.connections[0].readyState) {
+      // Usa la connessione al database esistente
+      console.log("Usa la connessione al database esistente");
+    } else {
+      // Crea una nuova connessione al database
+      await mongoose.connect(process.env.DATABASE_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      });
+      console.log("Nuova connessione al database creata");
+    }
 
     // Crea un nuovo ordine utilizzando il modello Order
     const newOrder = new Order({ nome, pizza, base, impasto, ingredienti });
