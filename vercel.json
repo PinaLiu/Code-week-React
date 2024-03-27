@@ -4,7 +4,7 @@
     {
       "src": "/api/order",
       "methods": ["POST"],
-      "dest": "server.js"
+      "dest": "/server.js"
     }
   ]
 }
