@@ -34,12 +34,14 @@ export default async function handler(req, res) {
       .save()
       .then(() => {
         res.status(200).json({ message: "Ordine ricevuto con successo!" });
+        mongoose.connection.close(); // Chiudi la connessione
       })
       .catch((error) => {
         res.status(500).json({
           error:
             "Si è verificato un errore durante il salvataggio dell'ordine.",
         });
+        mongoose.connection.close(); // Chiudi la connessione
       });
   } else {
     res.status(405).end();
