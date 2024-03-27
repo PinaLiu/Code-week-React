@@ -8,6 +8,10 @@ const CardCarrello = ({ title, items, onOrder, onClear }) => {
   const [nome, setNome] = useState(""); // Stato per memorizzare il nome inserito
 
   const handleOrder = async () => {
+    // Chiamato quando l'utente conferma l'ordine con il nome inserito
+    onOrder(nome);
+    setShowModal(false); // Chiudi la finestra modale dopo l'ordine
+    setNome(""); // Reimposta lo stato del nome
     try {
       const response = await axios.post("/api/order", {
         nome: nome,
