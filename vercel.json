@@ -1,19 +1,10 @@
 {
-    "version": 2,
-    "routes": [
-      {
-        "src": "/api/order",
-        "methods": ["POST"],
-        "dest": "/api/order.js"
-      }
-    ]
-  },
-  {
-    "routes": [
-      {
-        "src": "/api/order",
-        "dest": "server.js" 
-      }
-    ]
-  }
-  
+  "version": 2,
+  "routes": [
+    {
+      "src": "/api/order",
+      "methods": ["POST"],
+      "dest": "server.js"
+    }
+  ]
+}
