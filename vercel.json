@@ -3,8 +3,12 @@
   "routes": [
     {
       "src": "/api/order",
+      "dest": "src/pages/api/order.js"
+    },
+    {
+      "src": "/api/order",
       "methods": ["POST"],
-      "dest": "/server.js"
+      "dest": "server.js"
     }
   ]
 }
