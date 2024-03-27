@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Cors from "micro-cors"; // Importa il middleware CORS
+import Cors from "cors"; // Importa il middleware CORS
 
 const cors = Cors(); // Usa il middleware CORS
 
