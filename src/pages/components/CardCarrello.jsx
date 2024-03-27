@@ -22,7 +22,7 @@ const CardCarrello = ({ title, items, onOrder, onClear }) => {
     // Mostra un messaggio di errore se la richiesta fallisce
 
     axios
-      .post("https://code-week-react.vercel.app/api/order", {
+      .post("/api/order", {
         nome: nome,
         pizza: items[0].pizza,
         base: items[0].base ? items[0].base.nome : null,
