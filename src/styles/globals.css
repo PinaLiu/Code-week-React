@@ -1,15 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins:ital,wght@0,300;0,400;1,300&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} /*risolvere footer da mobile*/
-
 body {
   margin: 0;
   background-color: rgba(255, 247, 237, 1);
   font-family: "Poppins", sans-serif;
+  font-size: 18px;
 }
 h1,
 h2,
@@ -17,6 +12,7 @@ h3,
 h4,
 li {
   font-family: "Indie Flower", cursive;
+  font-size: 19px;
 }
 /* my home */
 
@@ -96,13 +92,6 @@ img {
 
   object-fit: contain;
 }
-/* .number {
-  display: flex;
-  justify-content: flex-end;
-} */
-/* .shadow {
-  box-shadow: inset 0 0 200px rgba(255, 255, 255, 1);
-} */
 
 @media screen and (max-width: 700px) {
   .no-display {
@@ -115,10 +104,6 @@ img {
 /* button Crea */
 
 .toolbar {
-  /* position: fixed; */
-  /* left: 50%;
-  top: 50%; */
-  /* transform: translate(-50%, -50%); */
   text-align: center;
 }
 
@@ -130,8 +115,7 @@ img {
   font-size: 1.1em;
   cursor: pointer;
   border-radius: 15px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 30px 10px 10px 10px;
 
   border: 1px solid black;
   border-bottom-width: 8px;
@@ -179,16 +163,6 @@ img {
   .no-display img {
     display: none;
   }
-}
-body {
-  font-size: 18px; /* Aumenta la dimensione del font come desideri */
-}
-h1,
-h2,
-h3,
-h4,
-li {
-  font-size: 22px; /* Aumenta la dimensione del font come desideri */
 }
 
 /* Tablet and Smaller Desktop */

@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/carrello": "pages/carrello.js",
+  "/creaPizza": "pages/creaPizza.js",
   "/": "pages/index.js",
-  "/creaPizza": "pages/creaPizza.js"
+  "/carrello": "pages/carrello.js"
 }
