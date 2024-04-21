@@ -3,7 +3,6 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/menu": "pages/menu.js",
-  "/api/order": "pages/api/order.js",
+  "/creaPizza": "pages/creaPizza.js",
   "/carrello": "pages/carrello.js"
 }

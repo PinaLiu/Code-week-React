@@ -168,3 +168,26 @@ img {
     border-radius: 15px;
   }
 }
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .no-display img {
+    display: none;
+  }
+}
+body {
+  font-size: 18px; /* Aumenta la dimensione del font come desideri */
+}
+h1,
+h2,
+h3,
+h4,
+li {
+  font-size: 22px; /* Aumenta la dimensione del font come desideri */
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .grid {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
