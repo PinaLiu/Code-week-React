@@ -1,9 +1,13 @@
+$header-main-color: linear-gradient(to left, #f46b45, #eea849);
 .footer {
+  // position: fixed;
+  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  background: linear-gradient(to left, #f46b45, #eea849);
-  height: 50px;
-  padding: 1em;
+
+  background: $header-main-color;
+  // height: 50px;
+  padding: 1.2em;
+  width: 100%;
 }

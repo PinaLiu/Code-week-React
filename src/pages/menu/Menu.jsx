@@ -62,7 +62,9 @@ function Menu({}) {
 
   return (
     <Layout>
-      <h1>Le nostre Pizze</h1>
+      <div className={styles.title}>
+        <h1>Le nostre Pizze</h1>
+      </div>
       <CardGenerator
         title={"Le classiche"}
         options={menuClassiche}

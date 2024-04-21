@@ -12,6 +12,11 @@
   ],
   "rootMainFiles": [],
   "pages": {
+    "/": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/index.js"
+    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
@@ -22,15 +27,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/carrello": [
+    "/creaPizza": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/carrello.js"
-    ],
-    "/menu": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/menu.js"
+      "static/chunks/pages/creaPizza.js"
     ]
   },
   "ampFirstPages": []
